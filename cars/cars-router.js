@@ -23,7 +23,7 @@ router.get("/:id", (req, res) => {
       res.json(car);
     })
     .catch((err) => {
-      res.status(500).json({ message: "Failed to retrieve car." });
+      res.status(500).json({ message: "Failed to retrieve car.", err });
     });
 });
 
@@ -40,7 +40,7 @@ router.post("/", (req, res) => {
     })
     .catch((err) => {
       console.log("POST error", err);
-      res.status(500).json({ message: "Failed to store data." });
+      res.status(500).json({ message: "Failed to store data.", err });
     });
 });
 
